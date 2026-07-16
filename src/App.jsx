@@ -17,7 +17,7 @@ function App() {
     business: '',
     message: ''
   })
-  
+
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
@@ -98,7 +98,7 @@ ${formData.message.trim()}`
     setTimeout(() => {
       setIsSubmitting(false)
       setSubmitSuccess(true)
-      
+
       // Open WhatsApp web or app in new window/tab
       window.open(whatsappUrl, '_blank')
 
@@ -132,7 +132,7 @@ ${formData.message.trim()}`
         {submitSuccess && (
           <div className="status-banner success" style={{ marginBottom: '20px' }}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M20 6 9 17l-5-5"/>
+              <path d="M20 6 9 17l-5-5" />
             </svg>
             <span>Success! Redirecting you to WhatsApp...</span>
           </div>
@@ -144,8 +144,8 @@ ${formData.message.trim()}`
             <label htmlFor="name">Full Name *</label>
             <div className="input-wrapper">
               <svg className="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
               </svg>
               <input
                 type="text"
@@ -166,7 +166,7 @@ ${formData.message.trim()}`
             <label htmlFor="phone">Phone Number *</label>
             <div className="input-wrapper">
               <svg className="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               <input
                 type="tel"
@@ -187,8 +187,8 @@ ${formData.message.trim()}`
             <label htmlFor="email">Email Address</label>
             <div className="input-wrapper">
               <svg className="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect width="20" height="16" x="2" y="4" rx="2"/>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
               <input
                 type="email"
@@ -208,8 +208,8 @@ ${formData.message.trim()}`
             <label htmlFor="business">Business Name</label>
             <div className="input-wrapper">
               <svg className="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect width="20" height="14" x="2" y="7" rx="2" ry="2"/>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
               </svg>
               <input
                 type="text"
@@ -240,8 +240,8 @@ ${formData.message.trim()}`
 
           {/* Action Buttons */}
           <div className="button-group">
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="submit-btn"
               disabled={isSubmitting}
             >
@@ -250,18 +250,18 @@ ${formData.message.trim()}`
               ) : (
                 <>
                   <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.464L0 24zm6.069-3.513c1.65.978 3.272 1.488 4.908 1.49 5.541.002 10.051-4.505 10.054-10.045.002-2.684-1.038-5.207-2.93-7.104C16.257 2.93 13.742 1.89 11.062 1.89 5.522 1.89 1.012 6.397 1.009 11.937c-.001 1.714.475 3.39 1.378 4.881l-1.005 3.673 3.744-.984zm12.38-7.904c-.272-.137-1.61-.795-1.86-.886-.25-.09-.432-.136-.613.136-.18.273-.7 1.85-.858 2.032-.158.18-.317.204-.589.068-.272-.136-1.15-.424-2.19-1.354-.808-.72-1.353-1.61-1.512-1.882-.158-.272-.017-.417.118-.553.123-.122.272-.318.408-.477.136-.16.182-.272.272-.455.09-.18.046-.339-.023-.477-.069-.136-.613-1.477-.84-2.023-.22-.53-.442-.457-.613-.466-.159-.008-.34-.01-.522-.01s-.477.068-.726.341c-.25.272-.954.932-.954 2.273s.977 2.636 1.114 2.818c.137.18 1.92 2.93 4.654 4.113.65.28 1.158.448 1.554.574.654.208 1.25.178 1.72.108.524-.078 1.61-.659 1.838-1.296.227-.636.227-1.182.159-1.295-.069-.115-.25-.18-.522-.317z"/>
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.464L0 24zm6.069-3.513c1.65.978 3.272 1.488 4.908 1.49 5.541.002 10.051-4.505 10.054-10.045.002-2.684-1.038-5.207-2.93-7.104C16.257 2.93 13.742 1.89 11.062 1.89 5.522 1.89 1.012 6.397 1.009 11.937c-.001 1.714.475 3.39 1.378 4.881l-1.005 3.673 3.744-.984zm12.38-7.904c-.272-.137-1.61-.795-1.86-.886-.25-.09-.432-.136-.613.136-.18.273-.7 1.85-.858 2.032-.158.18-.317.204-.589.068-.272-.136-1.15-.424-2.19-1.354-.808-.72-1.353-1.61-1.512-1.882-.158-.272-.017-.417.118-.553.123-.122.272-.318.408-.477.136-.16.182-.272.272-.455.09-.18.046-.339-.023-.477-.069-.136-.613-1.477-.84-2.023-.22-.53-.442-.457-.613-.466-.159-.008-.34-.01-.522-.01s-.477.068-.726.341c-.25.272-.954.932-.954 2.273s.977 2.636 1.114 2.818c.137.18 1.92 2.93 4.654 4.113.65.28 1.158.448 1.554.574.654.208 1.25.178 1.72.108.524-.078 1.61-.659 1.838-1.296.227-.636.227-1.182.159-1.295-.069-.115-.25-.18-.522-.317z" />
                   </svg>
                   <span>Submit</span>
                 </>
               )}
             </button>
-            <a 
+            <a
               href={`tel:+${WHATSAPP_PHONE_NUMBER}`}
               className="call-btn"
             >
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               <span>Call Us</span>
             </a>
