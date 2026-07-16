@@ -8,6 +8,7 @@ import './App.css'
 // CONFIGURATION: Customize your settings here
 // ==========================================
 const WHATSAPP_PHONE_NUMBER = '919869840827' // Your actual WhatsApp number
+const CALL_PHONE_NUMBER = '+919869840827'
 const BUSINESS_NAME = 'Apex Dev'
 const GOOGLE_SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzV_fTirqHUj9n2bjfoDvkP3fA1-vXWX9AUl2lsQpBUwRxgCPkld4nyrRs52csruFQ3/exec' // Add Google Sheet Apps Script URL here (optional)
 
