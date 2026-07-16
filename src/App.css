@@ -246,7 +246,19 @@ textarea.form-input {
   box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.15);
 }
 
-/* Submit & Social Action Buttons */
+.button-group {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+  .button-group {
+    grid-template-columns: 1fr;
+  }
+}
+
 .submit-btn {
   background: var(--whatsapp-color);
   color: white;
@@ -262,7 +274,6 @@ textarea.form-input {
   gap: 10px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 14px 0 var(--whatsapp-glow);
-  margin-top: 10px;
 }
 
 .submit-btn:hover {
@@ -279,6 +290,40 @@ textarea.form-input {
   width: 20px;
   height: 20px;
   fill: currentColor;
+}
+
+.call-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.call-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.call-btn:active {
+  transform: translateY(0);
+}
+
+.call-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
 }
 
 /* Status Notifications */
