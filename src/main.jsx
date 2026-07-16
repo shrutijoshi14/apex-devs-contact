@@ -6,7 +6,7 @@ import './index.css'
 import App from './App.jsx'
 import CompanyProfile from './CompanyProfile.jsx'
 
-const basename = import.meta.env.DEV ? '/' : '/apex-devs-contact'
+const basename = '/apex-devs-contact'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
