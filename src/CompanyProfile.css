@@ -62,9 +62,18 @@
 }
 
 /* Typography Utilities */
+.profile-page h1,
+.profile-page h2,
+.profile-page h3,
+.profile-page h4,
+.profile-page h5,
+.profile-page h6 {
+  font-weight: 500 !important;
+}
+
 .profile-section-title {
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: -0.03em;
   text-align: center;
   margin-bottom: 1rem;
@@ -122,7 +131,7 @@
 
 .profile-hero-title {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 800;
+  font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.04em;
   margin-bottom: 20px;

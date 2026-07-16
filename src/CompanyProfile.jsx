@@ -51,6 +51,14 @@ export default function CompanyProfile() {
   const [activeTimeline, setActiveTimeline] = useState(3) // Default active step
   const [activePortfolioCategory, setActivePortfolioCategory] = useState('All')
   
+  const scrollToSection = (e, id) => {
+    e.preventDefault()
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   // Track scroll position for floating back-to-top button visibility
   useEffect(() => {
     const handleScroll = () => {
@@ -239,19 +247,19 @@ export default function CompanyProfile() {
           <div className="collapse navbar-collapse justify-content-end" id="profileNavbar">
             <ul className="navbar-nav gap-2 mt-3 mt-lg-0">
               <li className="nav-item">
-                <a className="nav-link text-white-50" href="#services">Services</a>
+                <a className="nav-link text-white-50" href="#services" onClick={(e) => scrollToSection(e, 'services')}>Services</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white-50" href="#portfolio">Portfolio</a>
+                <a className="nav-link text-white-50" href="#portfolio" onClick={(e) => scrollToSection(e, 'portfolio')}>Portfolio</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white-50" href="#process">Process</a>
+                <a className="nav-link text-white-50" href="#process" onClick={(e) => scrollToSection(e, 'process')}>Process</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link text-white-50" href="#/contact">Contact</a>
               </li>
               <li className="nav-item text-white">
-                <a className="nav-link profile-hero-btn-primary py-2 px-3 ms-lg-3" href="#book">Book Meeting</a>
+                <a className="nav-link profile-hero-btn-primary py-2 px-3 ms-lg-3" href="#book" onClick={(e) => scrollToSection(e, 'book')}>Book Meeting</a>
               </li>
             </ul>
           </div>
@@ -290,12 +298,12 @@ export default function CompanyProfile() {
               </div>
 
               <div className="d-flex flex-wrap gap-3">
-                <a href="#services" className="btn profile-hero-btn-primary d-inline-flex align-items-center gap-2">
+                <a href="#services" onClick={(e) => scrollToSection(e, 'services')} className="btn profile-hero-btn-primary d-inline-flex align-items-center gap-2">
                   <span>View Services</span>
                   <ArrowRight size={18} />
                 </a>
-                <a href="#portfolio" className="btn profile-hero-btn-outline">View Portfolio</a>
-                <a href="#book" className="btn profile-hero-btn-outline" style={{ borderColor: 'rgba(0,242,254,0.3)' }}>Book Consultation</a>
+                <a href="#portfolio" onClick={(e) => scrollToSection(e, 'portfolio')} className="btn profile-hero-btn-outline">View Portfolio</a>
+                <a href="#book" onClick={(e) => scrollToSection(e, 'book')} className="btn profile-hero-btn-outline" style={{ borderColor: 'rgba(0,242,254,0.3)' }}>Book Consultation</a>
               </div>
             </motion.div>
 
@@ -784,10 +792,10 @@ export default function CompanyProfile() {
             <div className="col-6 col-lg-3 offset-lg-1">
               <h5 className="text-white font-weight-bold mb-3" style={{ fontSize: '1rem' }}>Quick Links</h5>
               <ul className="profile-footer-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Our Work</a></li>
-                <li><a href="#process">Roadmap</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#services" onClick={(e) => scrollToSection(e, 'services')}>Services</a></li>
+                <li><a href="#portfolio" onClick={(e) => scrollToSection(e, 'portfolio')}>Our Work</a></li>
+                <li><a href="#process" onClick={(e) => scrollToSection(e, 'process')}>Roadmap</a></li>
+                <li><a href="#faq" onClick={(e) => scrollToSection(e, 'faq')}>FAQ</a></li>
                 <li><a href="#/contact">Contact Us</a></li>
               </ul>
             </div>
