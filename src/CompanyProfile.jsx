@@ -247,6 +247,9 @@ export default function CompanyProfile() {
               <li className="nav-item">
                 <a className="nav-link text-white-50" href="#process">Process</a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link text-white-50" href="#/contact">Contact</a>
+              </li>
               <li className="nav-item text-white">
                 <a className="nav-link profile-hero-btn-primary py-2 px-3 ms-lg-3" href="#book">Book Meeting</a>
               </li>
@@ -785,6 +788,7 @@ export default function CompanyProfile() {
                 <li><a href="#portfolio">Our Work</a></li>
                 <li><a href="#process">Roadmap</a></li>
                 <li><a href="#faq">FAQ</a></li>
+                <li><a href="#/contact">Contact Us</a></li>
               </ul>
             </div>
 

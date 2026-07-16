@@ -10,8 +10,8 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HashRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/company-profile" element={<CompanyProfile />} />
+        <Route path="/" element={<CompanyProfile />} />
+        <Route path="/contact" element={<App />} />
       </Routes>
     </HashRouter>
   </StrictMode>,
