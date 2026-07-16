@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import logoImg from './assets/logo-removebg-preview.png'
 import './App.css'
 
 // ==========================================
@@ -101,7 +102,8 @@ ${formData.message.trim()}`
       {/* Sleek Contact Form */}
       <div className="card">
         <div className="form-header" style={{ textAlign: 'center' }}>
-          <div className="logo-container" style={{ marginBottom: '16px' }}>
+          <div className="logo-wrapper">
+            <img src={logoImg} alt="Logo" className="business-logo" />
             <h1 className="logo-text">{BUSINESS_NAME}</h1>
           </div>
           <h2>Get in Touch</h2>
