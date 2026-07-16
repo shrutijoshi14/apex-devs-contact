@@ -3,8 +3,9 @@ import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { 
   Globe, Code, Cpu, Database, Cloud, Shield, Settings, Users, Briefcase, Award, Clock,
   ArrowRight, Phone, MessageSquare, ArrowUp, Mail, Download, FileText, ChevronDown, 
-  MapPin, CheckCircle, ExternalLink, Menu, X, Play, Zap, RefreshCw, BarChart2
+  MapPin, CheckCircle, ExternalLink, Menu, X, Play, Zap, RefreshCw, BarChart2, Sun, Moon
 } from 'lucide-react'
+import logoImg from './assets/logo-removebg-preview.png'
 import './CompanyProfile.css'
 
 // Configuration constants matching the business settings
@@ -63,6 +64,17 @@ export default function CompanyProfile() {
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [activeTimeline, setActiveTimeline] = useState(3) // Default active step
   const [activePortfolioCategory, setActivePortfolioCategory] = useState('All')
+
+  const [theme, setTheme] = useState(localStorage.getItem('apexTheme') || 'dark-theme')
+
+  useEffect(() => {
+    document.body.className = theme
+    localStorage.setItem('apexTheme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark-theme' ? 'light-theme' : 'dark-theme')
+  }
   
   const scrollToSection = (e, id) => {
     e.preventDefault()
@@ -249,30 +261,38 @@ export default function CompanyProfile() {
       <nav className="navbar navbar-expand-lg navbar-dark profile-navbar py-3">
         <div className="container">
           <a className="navbar-brand d-flex align-items-center gap-2" href="#">
-            <div style={{ background: 'var(--profile-gradient-primary)', width: '32px', height: '32px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#040508', fontWeight: 'bold' }}>
-              A
-            </div>
+            <img src={logoImg} alt="Apex Dev Logo" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
             <span style={{ fontWeight: '700', letterSpacing: '-0.02em', background: 'var(--profile-gradient-text)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{BUSINESS_NAME}</span>
           </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#profileNavbar">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse justify-content-end" id="profileNavbar">
-            <ul className="navbar-nav gap-2 mt-3 mt-lg-0">
+            <ul className="navbar-nav gap-2 mt-3 mt-lg-0 align-items-center">
               <li className="nav-item">
-                <a className="nav-link text-white-50" href="#services" onClick={(e) => scrollToSection(e, 'services')}>Services</a>
+                <a className="nav-link" href="#services" onClick={(e) => scrollToSection(e, 'services')}>Services</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white-50" href="#portfolio" onClick={(e) => scrollToSection(e, 'portfolio')}>Portfolio</a>
+                <a className="nav-link" href="#portfolio" onClick={(e) => scrollToSection(e, 'portfolio')}>Portfolio</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white-50" href="#process" onClick={(e) => scrollToSection(e, 'process')}>Process</a>
+                <a className="nav-link" href="#process" onClick={(e) => scrollToSection(e, 'process')}>Process</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white-50" href="#/contact">Contact</a>
+                <a className="nav-link" href="#/contact">Contact</a>
               </li>
-              <li className="nav-item text-white">
+              <li className="nav-item">
                 <a className="nav-link profile-hero-btn-primary py-2 px-3 ms-lg-3" href="#book" onClick={(e) => scrollToSection(e, 'book')}>Book Meeting</a>
+              </li>
+              <li className="nav-item ms-lg-2">
+                <button 
+                  onClick={toggleTheme} 
+                  className="btn border-0 p-2 d-flex align-items-center justify-content-center"
+                  aria-label="Toggle Theme"
+                  style={{ background: 'transparent', color: 'var(--profile-text-secondary)' }}
+                >
+                  {theme === 'dark-theme' ? <Sun size={20} style={{ color: 'var(--profile-neon-blue)' }} /> : <Moon size={20} style={{ color: 'var(--profile-neon-purple)' }} />}
+                </button>
               </li>
             </ul>
           </div>
@@ -289,12 +309,7 @@ export default function CompanyProfile() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="profile-hero-logo">
-                <div style={{ background: 'var(--profile-gradient-primary)', width: '40px', height: '40px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#040508', fontWeight: 'bold', fontSize: '1.2rem' }}>
-                  A
-                </div>
-                <h4 style={{ margin: 0, fontWeight: '700', letterSpacing: '-0.02em' }}>{BUSINESS_NAME}</h4>
-              </div>
+
               <h1 className="profile-hero-title">
                 Building Modern<br />
                 <span>Digital Solutions</span>
@@ -536,7 +551,7 @@ export default function CompanyProfile() {
                     <img src={item.image} alt={item.title} className="profile-portfolio-img" loading="lazy" />
                     <div className="profile-portfolio-content">
                       <span className="profile-portfolio-category">{item.category}</span>
-                      <h4 className="text-white font-weight-bold mt-1" style={{ fontSize: '1.25rem' }}>{item.title}</h4>
+                      <h4 className="font-weight-bold mt-1" style={{ fontSize: '1.25rem' }}>{item.title}</h4>
                       <p style={{ fontSize: '0.9rem', color: 'var(--profile-text-secondary)', marginTop: '8px' }}>{item.desc}</p>
                       
                       <div className="profile-portfolio-tech">
@@ -605,10 +620,10 @@ export default function CompanyProfile() {
                     <div style={{ color: '#ffb703', marginBottom: '16px', fontSize: '1.2rem' }}>
                       {'★'.repeat(testimonials[testimonialIndex].rating)}
                     </div>
-                    <p className="lead italic text-white-50" style={{ fontSize: '1.1rem', fontStyle: 'italic', lineHeight: '1.6' }}>
+                    <p className="lead italic" style={{ fontSize: '1.1rem', fontStyle: 'italic', lineHeight: '1.6', color: 'var(--profile-text-secondary)' }}>
                       "{testimonials[testimonialIndex].review}"
                     </p>
-                    <h5 className="text-white font-weight-bold mt-4" style={{ marginBottom: '2px' }}>{testimonials[testimonialIndex].name}</h5>
+                    <h5 className="font-weight-bold mt-4" style={{ marginBottom: '2px' }}>{testimonials[testimonialIndex].name}</h5>
                     <span style={{ fontSize: '0.85rem', color: 'var(--profile-text-muted)' }}>{testimonials[testimonialIndex].role}</span>
                   </motion.div>
                 </AnimatePresence>
@@ -699,7 +714,7 @@ export default function CompanyProfile() {
               <div className="col-md-6 col-lg-3" key={idx}>
                 <a href="#book" className="profile-resource-card text-start">
                   <div>
-                    <h5 className="text-white mb-1" style={{ fontSize: '0.95rem', fontWeight: '600' }}>{res.name}</h5>
+                    <h5 className="mb-1" style={{ fontSize: '0.95rem', fontWeight: '600' }}>{res.name}</h5>
                     <span style={{ fontSize: '0.75rem', color: 'var(--profile-text-muted)' }}>Format: {res.type}</span>
                   </div>
                   <div className="profile-resource-icon">
@@ -716,7 +731,7 @@ export default function CompanyProfile() {
       <section className="py-5 position-relative z-index-1" id="book">
         <div className="container">
           <div className="profile-cta-section">
-            <h2 className="text-white font-weight-bold mb-3" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', letterSpacing: '-0.02em' }}>
+            <h2 className="font-weight-bold mb-3" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.5rem)', letterSpacing: '-0.02em' }}>
               Let's Build Something Amazing Together
             </h2>
             <p className="mx-auto mb-4" style={{ maxWidth: '580px', color: 'var(--profile-text-secondary)' }}>
@@ -791,7 +806,10 @@ export default function CompanyProfile() {
         <div className="container">
           <div className="row g-4 text-start">
             <div className="col-lg-4">
-              <h4 className="text-white font-weight-bold mb-3">{BUSINESS_NAME}</h4>
+              <div className="d-flex align-items-center gap-2 mb-3">
+                <img src={logoImg} alt="Apex Dev Logo" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
+                <h4 className="font-weight-bold m-0" style={{ fontSize: '1.25rem' }}>{BUSINESS_NAME}</h4>
+              </div>
               <p style={{ fontSize: '0.9rem', color: 'var(--profile-text-secondary)', lineHeight: '1.6' }}>
                 Engineering futuristic, high-performance web systems and automation integrations for scaling corporate teams.
               </p>
@@ -803,7 +821,7 @@ export default function CompanyProfile() {
             </div>
             
             <div className="col-6 col-lg-3 offset-lg-1">
-              <h5 className="text-white font-weight-bold mb-3" style={{ fontSize: '1rem' }}>Quick Links</h5>
+              <h5 className="font-weight-bold mb-3" style={{ fontSize: '1rem' }}>Quick Links</h5>
               <ul className="profile-footer-links">
                 <li><a href="#services" onClick={(e) => scrollToSection(e, 'services')}>Services</a></li>
                 <li><a href="#portfolio" onClick={(e) => scrollToSection(e, 'portfolio')}>Our Work</a></li>
@@ -814,7 +832,7 @@ export default function CompanyProfile() {
             </div>
 
             <div className="col-6 col-lg-4">
-              <h5 className="text-white font-weight-bold mb-3" style={{ fontSize: '1rem' }}>Operational Focus</h5>
+              <h5 className="font-weight-bold mb-3" style={{ fontSize: '1rem' }}>Operational Focus</h5>
               <ul className="profile-footer-links">
                 <li><a href="#services">CRM Platform Engineering</a></li>
                 <li><a href="#services">ERP Invoicing Structures</a></li>
@@ -835,6 +853,26 @@ export default function CompanyProfile() {
           </div>
         </div>
       </footer>
+
+      {/* Mobile Sticky Bottom Actions Bar */}
+      <div className="profile-mobile-sticky-bar">
+        <a 
+          href={`https://wa.me/${WHATSAPP_PHONE_NUMBER}`}
+          className="profile-mobile-sticky-btn profile-mobile-whatsapp"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <WhatsAppIcon size={18} />
+          <span>WhatsApp Us</span>
+        </a>
+        <a 
+          href={`tel:${CALL_PHONE_NUMBER}`}
+          className="profile-mobile-sticky-btn profile-mobile-call"
+        >
+          <Phone size={18} fill="white" />
+          <span>Call Us Now</span>
+        </a>
+      </div>
     </div>
   )
 }

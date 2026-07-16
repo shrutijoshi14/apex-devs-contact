@@ -1,9 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
+body.dark-theme {
+  --font-sans: 'Outfit', sans-serif;
+  --bg-primary: #090a0f;
+  --bg-card: rgba(18, 20, 30, 0.65);
+  --bg-input: rgba(255, 255, 255, 0.03);
+  --bg-input-focus: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(99, 102, 241, 0.5);
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  --text-primary: #f3f4f6;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --whatsapp-color: #25d366;
+  --whatsapp-glow: rgba(37, 211, 102, 0.25);
+  --shadow-main: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 40%);
+}
+
+body.light-theme {
+  --font-sans: 'Outfit', sans-serif;
+  --bg-primary: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-input: rgba(0, 0, 0, 0.03);
+  --bg-input-focus: rgba(0, 0, 0, 0.05);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-focus: rgba(99, 102, 241, 0.6);
+  --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --whatsapp-color: #25d366;
+  --whatsapp-glow: rgba(37, 211, 102, 0.15);
+  --shadow-main: 0 8px 32px 0 rgba(0, 0, 0, 0.06);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.03) 0%, transparent 40%);
+}
+
 :root {
   --font-sans: 'Outfit', sans-serif;
   --bg-primary: #090a0f;
   --bg-card: rgba(18, 20, 30, 0.65);
+  --bg-input: rgba(255, 255, 255, 0.03);
+  --bg-input-focus: rgba(255, 255, 255, 0.05);
   --border-color: rgba(255, 255, 255, 0.08);
   --border-focus: rgba(99, 102, 241, 0.5);
   --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
@@ -218,7 +260,7 @@ body {
 
 .form-input {
   width: 100%;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--bg-input);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 14px 16px 14px 44px;
@@ -230,12 +272,12 @@ body {
 }
 
 .form-input:hover {
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(128, 128, 128, 0.35);
 }
 
 .form-input:focus {
   border-color: var(--border-focus);
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-input-focus);
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
 }
 

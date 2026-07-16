@@ -37,6 +37,15 @@
   transition: all 0.3s ease;
 }
 
+.profile-navbar .nav-link {
+  color: var(--profile-text-secondary) !important;
+  transition: color 0.2s ease;
+}
+
+.profile-navbar .nav-link:hover {
+  color: var(--profile-neon-blue) !important;
+}
+
 /* Futuristic background animations and glow elements */
 .profile-grid-bg {
   position: fixed;
@@ -82,6 +91,7 @@
 .profile-page h5,
 .profile-page h6 {
   font-weight: 500 !important;
+  color: var(--profile-text-primary) !important;
 }
 
 .profile-section-title {
@@ -677,3 +687,153 @@
 .profile-social-icon:hover {
   color: var(--profile-neon-purple);
 }
+
+/* Theme Overrides for Light Theme */
+body.light-theme .profile-page {
+  --profile-bg: #f8fafc;
+  --profile-bg-card: rgba(255, 255, 255, 0.85);
+  --profile-border: rgba(0, 0, 0, 0.08);
+  --profile-text-primary: #0f172a;
+  --profile-text-secondary: #475569;
+  --profile-text-muted: #94a3b8;
+  --profile-gradient-text: linear-gradient(90deg, #0082c8 0%, #7928ca 100%);
+}
+
+body.light-theme .profile-grid-bg {
+  background-image: 
+    linear-gradient(rgba(0, 130, 200, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 130, 200, 0.04) 1px, transparent 1px);
+}
+
+body.light-theme .profile-timeline-dot {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .profile-portfolio-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .profile-portfolio-tech-badge {
+  background: rgba(0, 0, 0, 0.04);
+  color: #475569;
+}
+
+body.light-theme .profile-accordion-item {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .profile-illustration-core {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 130, 200, 0.2);
+}
+
+body.light-theme .profile-resource-card {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+body.light-theme .profile-navbar {
+  background: rgba(248, 248, 252, 0.85) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+body.light-theme .navbar-brand span {
+  background: var(--profile-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.light-theme .nav-link {
+  color: #475569 !important;
+}
+
+body.light-theme .nav-link:hover {
+  color: #0082c8 !important;
+}
+
+body.light-theme .nav-link.profile-hero-btn-primary {
+  color: #040508 !important;
+}
+
+body.light-theme .profile-footer {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .profile-counter-value {
+  background: var(--profile-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.light-theme .profile-why-num {
+  color: #0082c8;
+}
+
+body.light-theme .profile-float-top {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #0f172a;
+}
+
+/* Mobile Sticky Bottom Bar Styles */
+@media (max-width: 767.98px) {
+  .profile-floating-actions {
+    display: none !important;
+  }
+  
+  .profile-mobile-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    background: rgba(10, 12, 22, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  
+  body.light-theme .profile-mobile-sticky-bar {
+    background: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  
+  .profile-mobile-sticky-btn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    height: 48px;
+    border-radius: 12px;
+    color: white !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-mobile-whatsapp {
+    background: #25d366;
+  }
+  
+  .profile-mobile-call {
+    background: #0077b6;
+  }
+  
+  .profile-page {
+    padding-bottom: 80px;
+  }
+}
+
+@media (min-width: 768px) {
+  .profile-mobile-sticky-bar {
+    display: none !important;
+  }
+}
+
