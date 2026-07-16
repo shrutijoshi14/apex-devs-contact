@@ -190,6 +190,8 @@ body {
   color: var(--text-secondary);
   letter-spacing: 0.02em;
   transition: color 0.3s ease;
+  text-align: left;
+  align-self: flex-start;
 }
 
 .form-group:focus-within label {

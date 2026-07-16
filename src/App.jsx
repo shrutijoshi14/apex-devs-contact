@@ -104,7 +104,6 @@ ${formData.message.trim()}`
         <div className="form-header" style={{ textAlign: 'center' }}>
           <div className="logo-wrapper">
             <img src={logoImg} alt="Logo" className="business-logo" />
-            <h1 className="logo-text">{BUSINESS_NAME}</h1>
           </div>
           <h2>Get in Touch</h2>
           <p>Provide your details below to send us a direct message on WhatsApp.</p>
