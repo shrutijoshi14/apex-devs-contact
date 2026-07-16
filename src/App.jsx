@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 
 // ==========================================
@@ -17,16 +17,8 @@ function App() {
   })
   
   const [errors, setErrors] = useState({})
-  const [currentUrl, setCurrentUrl] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
-
-  // Get current site URL to generate QR code dynamically
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setCurrentUrl(window.location.href)
-    }
-  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -103,47 +95,15 @@ ${formData.message.trim()}`
     }, 800)
   }
 
-  // QR Code URL based on the current website url
-  const qrCodeUrl = currentUrl 
-    ? `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(currentUrl)}`
-    : ''
 
   return (
     <div className="app-container">
-      {/* Left Side: Business profile and Dynamic QR Code */}
-      <div className="card info-section">
-        <div className="logo-container">
-          <h1 className="logo-text">{BUSINESS_NAME}</h1>
-        </div>
-        <p className="tagline">
-          Scan the QR code to instantly load this digital contact form on your mobile device.
-        </p>
-
-        {qrCodeUrl && (
-          <div className="qr-box">
-            <img 
-              src={qrCodeUrl} 
-              alt="Scan to Connect QR Code" 
-              className="qr-image" 
-            />
-          </div>
-        )}
-
-        <div className="qr-instruction">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-            <rect width="6" height="6" x="7" y="7"/>
-            <rect width="6" height="6" x="7" y="11" transform="rotate(90 10 14)"/>
-            <rect width="6" height="6" x="11" y="7" transform="rotate(90 14 10)"/>
-            <path d="M17 17h.01M17 13h.01M13 17h.01"/>
-          </svg>
-          <span>Scan to Share & Connect</span>
-        </div>
-      </div>
-
-      {/* Right Side: Sleek Contact Form */}
+      {/* Sleek Contact Form */}
       <div className="card">
-        <div className="form-header">
+        <div className="form-header" style={{ textAlign: 'center' }}>
+          <div className="logo-container" style={{ marginBottom: '16px' }}>
+            <h1 className="logo-text">{BUSINESS_NAME}</h1>
+          </div>
           <h2>Get in Touch</h2>
           <p>Provide your details below to send us a direct message on WhatsApp.</p>
         </div>

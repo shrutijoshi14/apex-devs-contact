@@ -43,17 +43,10 @@ body {
 }
 
 .app-container {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  align-items: start;
-}
-
-@media (max-width: 900px) {
-  .app-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 /* Glassmorphism Cards */
@@ -66,6 +59,8 @@ body {
   padding: 40px;
   box-shadow: var(--shadow-main);
   transition: transform 0.3s ease, border-color 0.3s ease;
+  width: 100%;
+  max-width: 600px;
 }
 
 .card:hover {
