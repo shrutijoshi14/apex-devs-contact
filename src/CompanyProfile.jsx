@@ -282,7 +282,7 @@ export default function CompanyProfile() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse justify-content-end" id="profileNavbar">
-            <ul className="navbar-nav gap-2 mt-3 mt-lg-0 align-items-center">
+            <ul className="navbar-nav gap-2 mt-3 mt-lg-0 align-items-start align-items-lg-center">
               <li className="nav-item">
                 <a className="nav-link" href="#services" onClick={(e) => scrollToSection(e, 'services')}>Services</a>
               </li>
@@ -295,7 +295,7 @@ export default function CompanyProfile() {
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">Contact</Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item d-none d-lg-block">
                 <a className="nav-link profile-hero-btn-primary py-2 px-3 ms-lg-3" href="#book" onClick={(e) => scrollToSection(e, 'book')}>Book Meeting</a>
               </li>
               <li className="nav-item ms-lg-2">
