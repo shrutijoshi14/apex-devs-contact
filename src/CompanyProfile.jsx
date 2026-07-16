@@ -13,6 +13,19 @@ const CALL_PHONE_NUMBER = '+919869840827'
 const BUSINESS_EMAIL = 'shrutijoshi1481995@gmail.com'
 const BUSINESS_NAME = 'Apex Dev'
 
+// Custom WhatsApp SVG Brand Icon
+const WhatsAppIcon = ({ size = 20, ...props }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    width={size} 
+    height={size} 
+    fill="currentColor" 
+    {...props}
+  >
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.665.989 3.3 1.503 4.94 1.505 5.548 0 10.064-4.512 10.068-10.066.002-2.69-1.043-5.22-2.943-7.12C16.855 1.574 14.331.528 11.64.528c-5.552 0-10.07 4.511-10.074 10.067-.001 1.802.483 3.562 1.4 5.124L1.875 22.23l6.572-1.722L6.648 19.15zM16.598 13.56c-.359-.18-2.122-1.048-2.45-1.167-.327-.119-.566-.18-.805.18-.239.36-.927 1.167-1.137 1.407-.21.24-.419.27-.778.09-1.802-.9-2.947-1.59-4.103-3.577-.304-.523.304-.486.87-1.614.097-.195.048-.364-.025-.514-.073-.15-.805-1.94-.888-2.143-.3-.724-.605-.626-.827-.636-.213-.01-.457-.012-.7-.012a1.35 1.35 0 0 0-.977.456C6.1 6.55 5.08 7.5 5.08 9.45c0 1.95 1.42 3.829 1.618 4.099.2.27 2.793 4.267 6.764 5.982.945.408 1.682.652 2.257.834.95.302 1.814.259 2.497.157.76-.113 2.122-.868 2.42-1.706.3-.837.3-1.554.21-1.706-.09-.153-.33-.243-.69-.423z"/>
+  </svg>
+)
+
 // Custom count animation component for Section 2 counters
 function Counter({ value, suffix = '' }) {
   const [count, setCount] = useState(0)
@@ -142,7 +155,7 @@ export default function CompanyProfile() {
     {
       title: 'Cloud & Optimizations',
       icon: <Cloud size={24} />,
-      items: ['AWS & GCP Deployments', 'Secure VPS Hosting', 'SEO Optimization Audit', 'SLA Technical Maintenance']
+      items: ['Cloud VPS Deployments', 'Secure Hosting Panels', 'SEO Optimization Audit', 'SLA Technical Maintenance']
     }
   ]
 
@@ -165,7 +178,7 @@ export default function CompanyProfile() {
   // Technology Stack definition
   const techStack = [
     'React', 'Next.js', 'Node.js', 'Express', 'MySQL', 'MongoDB', 
-    'Redis', 'Docker', 'AWS', 'Firebase', 'Bootstrap', 'Tailwind', 
+    'Redis', 'Docker', 'Vercel', 'Firebase', 'Bootstrap', 'Tailwind', 
     'Git', 'GitHub', 'REST API', 'AI Integrations'
   ]
 
@@ -209,7 +222,7 @@ export default function CompanyProfile() {
   const faqItems = [
     {
       q: 'What technologies does Apex Dev specialize in?',
-      a: 'We specialize in React, Next.js, Node.js, Express, MySQL, MongoDB, and Cloud architecture (AWS/Firebase). We build modern, highly secure, and extremely fast web applications.'
+      a: 'We specialize in React, Next.js, Node.js, Express, MySQL, MongoDB, and Cloud architecture (Google Cloud/Firebase). We build modern, highly secure, and extremely fast web applications.'
     },
     {
       q: 'Do you offer post-deployment maintenance?',
@@ -327,7 +340,7 @@ export default function CompanyProfile() {
                     &nbsp;&nbsp;name: <span style={{ color: '#a855f7' }}>"{BUSINESS_NAME}"</span>,<br />
                     &nbsp;&nbsp;focus: <span style={{ color: '#a855f7' }}>"High Performance"</span>,<br />
                     &nbsp;&nbsp;stack: [<span style={{ color: '#a855f7' }}>"React", "Node", "MySQL"</span>],<br />
-                    &nbsp;&nbsp;deploy: <span style={{ color: '#a855f7' }}>"Cloud (AWS)"</span><br />
+                    &nbsp;&nbsp;deploy: <span style={{ color: '#a855f7' }}>"Cloud Server"</span><br />
                     &#125;;<br /><br />
                     <span style={{ color: '#c084fc' }}>function</span> buildSuccess() &#123;<br />
                     &nbsp;&nbsp;console.log(<span style={{ color: '#a855f7' }}>"System optimized! 🚀"</span>);<br />
@@ -717,7 +730,7 @@ export default function CompanyProfile() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <MessageSquare size={18} />
+                <WhatsAppIcon size={18} />
                 <span>Schedule on WhatsApp</span>
               </a>
               <a 
@@ -748,7 +761,7 @@ export default function CompanyProfile() {
           rel="noreferrer"
           aria-label="WhatsApp Us"
         >
-          <MessageSquare size={22} fill="white" />
+          <WhatsAppIcon size={24} />
         </a>
         <a 
           href={`tel:${CALL_PHONE_NUMBER}`}
