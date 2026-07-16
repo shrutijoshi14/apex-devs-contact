@@ -278,10 +278,21 @@ export default function CompanyProfile() {
             <img src={logoImg} alt="Apex Dev Logo" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
             <span style={{ fontWeight: '700', letterSpacing: '-0.02em', background: 'var(--profile-gradient-text)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{BUSINESS_NAME}</span>
           </a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#profileNavbar">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse justify-content-end" id="profileNavbar">
+          <div className="d-flex align-items-center gap-2 order-lg-3">
+            <button 
+              onClick={toggleTheme} 
+              className="btn border-0 p-2 d-flex align-items-center justify-content-center"
+              aria-label="Toggle Theme"
+              style={{ background: 'transparent', color: 'var(--profile-text-secondary)' }}
+            >
+              {theme === 'dark-theme' ? <Sun size={20} style={{ color: 'var(--profile-neon-blue)' }} /> : <Moon size={20} style={{ color: 'var(--profile-neon-purple)' }} />}
+            </button>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#profileNavbar">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <div className="collapse navbar-collapse justify-content-end order-lg-2" id="profileNavbar">
             <ul className="navbar-nav gap-2 mt-3 mt-lg-0 align-items-start align-items-lg-center">
               <li className="nav-item">
                 <a className="nav-link" href="#services" onClick={(e) => scrollToSection(e, 'services')}>Services</a>
@@ -297,16 +308,6 @@ export default function CompanyProfile() {
               </li>
               <li className="nav-item d-none d-lg-block">
                 <a className="nav-link profile-hero-btn-primary py-2 px-3 ms-lg-3" href="#book" onClick={(e) => scrollToSection(e, 'book')}>Book Meeting</a>
-              </li>
-              <li className="nav-item ms-lg-2">
-                <button 
-                  onClick={toggleTheme} 
-                  className="btn border-0 p-2 d-flex align-items-center justify-content-center"
-                  aria-label="Toggle Theme"
-                  style={{ background: 'transparent', color: 'var(--profile-text-secondary)' }}
-                >
-                  {theme === 'dark-theme' ? <Sun size={20} style={{ color: 'var(--profile-neon-blue)' }} /> : <Moon size={20} style={{ color: 'var(--profile-neon-purple)' }} />}
-                </button>
               </li>
             </ul>
           </div>
