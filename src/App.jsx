@@ -27,6 +27,10 @@ function App() {
   const [theme, setTheme] = useState(localStorage.getItem('apexTheme') || 'dark-theme')
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     document.body.className = theme
     localStorage.setItem('apexTheme', theme)
   }, [theme])
