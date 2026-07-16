@@ -24,6 +24,17 @@
   scroll-behavior: smooth;
 }
 
+.profile-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(4, 5, 8, 0.75) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
 /* Futuristic background animations and glow elements */
 .profile-grid-bg {
   position: fixed;

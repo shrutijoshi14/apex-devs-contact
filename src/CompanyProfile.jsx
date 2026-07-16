@@ -233,7 +233,7 @@ export default function CompanyProfile() {
       <div className="profile-glow-orb-2"></div>
 
       {/* Navigation header */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-transparent py-4 position-relative z-index-2">
+      <nav className="navbar navbar-expand-lg navbar-dark profile-navbar py-3">
         <div className="container">
           <a className="navbar-brand d-flex align-items-center gap-2" href="#">
             <div style={{ background: 'var(--profile-gradient-primary)', width: '32px', height: '32px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#040508', fontWeight: 'bold' }}>
