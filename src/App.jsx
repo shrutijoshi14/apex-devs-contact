@@ -7,6 +7,7 @@ import './App.css'
 // ==========================================
 const WHATSAPP_PHONE_NUMBER = '919869840827' // Your actual WhatsApp number
 const BUSINESS_NAME = 'Apex Dev'
+const GOOGLE_SHEET_WEBAPP_URL = '' // Add Google Sheet Apps Script URL here (optional)
 
 function App() {
   const [formData, setFormData] = useState({
@@ -74,7 +75,26 @@ ${formData.message.trim()}`
     const encodedMessage = encodeURIComponent(messageTemplate)
     const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodedMessage}`
 
-    // Simulate database save or action latency
+    // Send to Google Sheets if configured
+    if (GOOGLE_SHEET_WEBAPP_URL) {
+      fetch(GOOGLE_SHEET_WEBAPP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim() || 'Not provided',
+          business: formData.business.trim() || 'Not provided',
+          message: formData.message.trim(),
+          timestamp: new Date().toLocaleString()
+        })
+      }).catch((err) => console.error('Error sending to Google Sheet:', err))
+    }
+
+    // Simulate action latency
     setTimeout(() => {
       setIsSubmitting(false)
       setSubmitSuccess(true)
