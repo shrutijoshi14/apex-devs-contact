@@ -86,6 +86,15 @@ export default function CompanyProfile() {
     const element = document.getElementById(id)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
+      
+      // Programmatically collapse the Bootstrap navbar on mobile
+      const navbarCollapse = document.getElementById('profileNavbar')
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        const toggler = document.querySelector('.navbar-toggler')
+        if (toggler) {
+          toggler.click()
+        }
+      }
     }
   }
 
