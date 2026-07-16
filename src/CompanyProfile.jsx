@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { 
   Globe, Code, Cpu, Database, Cloud, Shield, Settings, Users, Briefcase, Award, Clock,
@@ -283,7 +284,7 @@ export default function CompanyProfile() {
                 <a className="nav-link" href="#process" onClick={(e) => scrollToSection(e, 'process')}>Process</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#/contact">Contact</a>
+                <Link className="nav-link" to="/contact">Contact</Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link profile-hero-btn-primary py-2 px-3 ms-lg-3" href="#book" onClick={(e) => scrollToSection(e, 'book')}>Book Meeting</a>
@@ -831,7 +832,7 @@ export default function CompanyProfile() {
                 <li><a href="#portfolio" onClick={(e) => scrollToSection(e, 'portfolio')}>Our Work</a></li>
                 <li><a href="#process" onClick={(e) => scrollToSection(e, 'process')}>Roadmap</a></li>
                 <li><a href="#faq" onClick={(e) => scrollToSection(e, 'faq')}>FAQ</a></li>
-                <li><a href="#/contact">Contact Us</a></li>
+                <li><Link to="/contact">Contact Us</Link></li>
               </ul>
             </div>
 

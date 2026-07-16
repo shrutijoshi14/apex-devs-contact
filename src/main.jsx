@@ -1,18 +1,20 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import App from './App.jsx'
 import CompanyProfile from './CompanyProfile.jsx'
 
+const basename = import.meta.env.DEV ? '/' : '/apex-devs-contact'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <HashRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<CompanyProfile />} />
         <Route path="/contact" element={<App />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   </StrictMode>,
 )

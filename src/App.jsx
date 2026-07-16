@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Sun, Moon, ArrowLeft } from 'lucide-react'
 import logoImg from './assets/logo-removebg-preview.png'
 import './App.css'
@@ -148,8 +149,8 @@ ${formData.message.trim()}`
       {/* Sleek Contact Form */}
       <div className="card" style={{ position: 'relative' }}>
         {/* Back navigation button */}
-        <a 
-          href="#/" 
+        <Link 
+          to="/" 
           className="back-home-btn"
           style={{
             position: 'absolute',
@@ -170,7 +171,7 @@ ${formData.message.trim()}`
         >
           <ArrowLeft size={16} />
           <span>Home</span>
-        </a>
+        </Link>
 
         {/* Theme toggle button */}
         <button 
@@ -223,8 +224,8 @@ ${formData.message.trim()}`
               >
                 Send Another Message
               </button>
-              <a 
-                href="#/"
+              <Link 
+                to="/"
                 className="btn btn-primary"
                 style={{
                   background: 'var(--accent-gradient)',
@@ -240,7 +241,7 @@ ${formData.message.trim()}`
                 }}
               >
                 Return to Home
-              </a>
+              </Link>
             </div>
           </div>
         ) : (
